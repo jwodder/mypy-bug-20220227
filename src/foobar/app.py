@@ -1,8 +1,8 @@
-from .widgets import Widget, RedWidget, BlueWidget, WidgetSpec
-import attr
+from .widgets import BlueWidget, RedWidget, Widget, WidgetSpec
+
 
 class App:
-    def make_widget(spec: WidgetSpec) -> Widget:
+    def make_widget(self, spec: WidgetSpec) -> Widget:
         if spec.color == "red":
             return RedWidget(app=self, spec=spec)
         elif spec.color == "blue":

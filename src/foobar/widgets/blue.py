@@ -1,6 +1,7 @@
 import attr
 from .base import Widget
 
+
 @attr.define
 class BlueWidget(Widget):
     nessness: int = attr.field(init=False)
