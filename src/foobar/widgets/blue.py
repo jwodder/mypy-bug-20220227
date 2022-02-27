@@ -1,12 +1,12 @@
-import attr
+from dataclasses import dataclass, field
 from .base import Widget
 
 
-@attr.define
+@dataclass
 class BlueWidget(Widget):
-    nessness: int = attr.field(init=False)
+    nessness: int = field(init=False)
 
-    def __attrs_post_init__(self) -> None:
+    def __post_init__(self) -> None:
         if self.spec.nessness is None:
             raise ValueError("Blue widgets must be nessy")
         self.nessness = self.spec.nessness

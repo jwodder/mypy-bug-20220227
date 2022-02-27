@@ -1,19 +1,19 @@
 from __future__ import annotations
+from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional
-import attr
 
 if TYPE_CHECKING:
     from ..app import App
 
 
-@attr.define
+@dataclass
 class WidgetSpec:
     color: str
     flavor: str
     nessness: Optional[int]
 
 
-@attr.define
+@dataclass
 class Widget:
     app: App
     spec: WidgetSpec
